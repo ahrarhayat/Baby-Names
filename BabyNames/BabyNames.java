@@ -138,10 +138,11 @@ public class BabyNames {
   public int yearOfHighestRank(String name, String gender)
   {
       DirectoryResource dr = new DirectoryResource();
-    
       String year = "";
+      String year2="";
       int yeari=0;
       int rankTemp=-1;
+      int indicator=0;
       for(File f : dr.selectedFiles())
       {
        FileResource fr = new FileResource(f);
@@ -149,50 +150,107 @@ public class BabyNames {
        int rank=1;
        for (CSVRecord rec : fr.getCSVParser(false))
        {     
-           if(rec.get(1).equals(gender) && count==0 && rec.get(0).equals(name))
+           if(rec.get(1).equals(gender) && count==0 )
            {
-               System.out.println("Rank on file is "+rank); 
+               if(rec.get(0).equals(name)){
                count=1;
+               indicator=1;
            }
            else{
                rank = rank +1;
             }
-        
+        }
 }
       if(rankTemp==-1)
       {
           rankTemp=rank+1;
       }
-      if(rank<rankTemp)
+      
+      if(rank<rankTemp )
        {
            rankTemp=rank;
            year= f.getName();
-           System.out.println(year);
+           
        }
+       
 
 }
- System.out.println(year.substring(3,7));
+
  yeari=Integer.parseInt(year.substring(3,7));
-      if(yeari>0)
+      if(yeari>0 && indicator == 1 )
       {
           return yeari;
       }
       else{
     return -1;
 }
-//There is a bug with this method, it returns value for both male and female genders
+
 }
 
 
 
   public void testYearOfHighestRank()
   {
-      String name="Isabella";
-      String gender="F";
+      String name="Mason";
+      String gender="M";
       int x =yearOfHighestRank( name, gender);
       System.out.println(name+ " is ranked the highest in the year "+x);
       
     }
-    
+   public double getAverageRank(String name,String gender)
+   {
+       DirectoryResource dr = new DirectoryResource();
+       double total=0;
+       double totalRank=0;
+       int indicator=0;
+       double rank =1;
+       for(File f : dr.selectedFiles())
+      {
+       int count=0;
+       rank =1;
+       FileResource fr = new FileResource(f);
+       
+       for(CSVRecord rec : fr.getCSVParser(false))
+       {
+            if(rec.get(1).equals(gender) && count == 0)
+            {
+               if(rec.get(0).equals(name))
+               {
+                   total=total+1;
+                   count=1;
+                   indicator=1;
+                   String name1 = f.getName();
+                   System.out.println(name1);
+               }
+               else{
+                   rank=rank+1;
+                }
+              
+        }
+      
+        }
+       totalRank=totalRank+rank;
+         
+      
+    }
+
+   System.out.println(totalRank);
+    System.out.println(total);
+   if(indicator==1){
+   double averageRank = totalRank/total;
+   return averageRank;
+}
+else 
+{
+    return -1;
+}
+}
+public void testGetAverageRank()
+{
+    String name="Sophia";
+    String gender="F";
+    double averageRank = getAverageRank(name,gender);
+    System.out.println("Average rank for the name "+ name+ " is "+averageRank);
+}
 }
 

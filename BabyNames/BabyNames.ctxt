@@ -1,12 +1,16 @@
 #BlueJ class context
 comment0.target=BabyNames
-comment0.text=\n\ Write\ a\ description\ of\ BabyNames\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ BabyNames\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ printNames()
 comment10.params=name\ gender
 comment10.target=int\ yearOfHighestRank(java.lang.String,\ java.lang.String)
 comment11.params=
 comment11.target=void\ testYearOfHighestRank()
+comment12.params=name\ gender
+comment12.target=double\ getAverageRank(java.lang.String,\ java.lang.String)
+comment13.params=
+comment13.target=void\ testGetAverageRank()
 comment2.params=fr
 comment2.target=void\ totalBirths(edu.duke.FileResource)
 comment3.params=
@@ -23,4 +27,4 @@ comment8.params=name\ gender\ year\ newYear
 comment8.target=void\ whatIsNameInYear(java.lang.String,\ java.lang.String,\ int,\ int)
 comment9.params=
 comment9.target=void\ testWhatIsNameInYear()
-numComments=12
+numComments=14
