@@ -299,7 +299,7 @@ public void testGetTotalBirthsRankedHigher()
     String name="Drew";
     String gender="M";
     int totalBirths= getTotalBirthsRankedHigher(year,name,gender);
-    System.out.println("There were "+totalBirths+" babies that were ranked higher than babies names with " 
+    System.out.println("There were "+totalBirths+" babies that were ranked higher than babies with name " 
                          +name);
 }
 
