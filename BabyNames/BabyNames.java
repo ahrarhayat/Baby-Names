@@ -304,4 +304,3 @@ public void testGetTotalBirthsRankedHigher()
 }
 
 }
-//Some names may appear in some years but not in others. Make sure your code correctly handles the case where a name appears in some years but not in others.
