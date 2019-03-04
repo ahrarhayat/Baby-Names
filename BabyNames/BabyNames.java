@@ -162,7 +162,7 @@ public class BabyNames {
             }
         }
 }
-      if(rankTemp==-1)
+      if(rankTemp==-1 && count==1)
       {
           rankTemp=rank+1;
       }
@@ -180,7 +180,7 @@ public class BabyNames {
        
 
 }
-
+ System.out.println(rankTemp);
  yearI=Integer.parseInt(year.substring(3,7));
  yearI2=Integer.parseInt(year2.substring(3,7));
       if(yearI>0 && indicator == 1 )
